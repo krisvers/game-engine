@@ -1,0 +1,47 @@
+game.c: In function ‘r_get_pixel’:
+game.c:5:17: error: ‘x’ redeclared as different kind of symbol
+ static uint16_t x, y = 0;
+                 ^
+In file included from game.c:3:0:
+include/render.h:7:31: note: previous definition of ‘x’ was here
+ uint32_t r_get_pixel(uint16_t x, uint16_t y) {
+                               ^
+game.c:5:20: error: ‘y’ redeclared as different kind of symbol
+ static uint16_t x, y = 0;
+                    ^
+In file included from game.c:3:0:
+include/render.h:7:43: note: previous definition of ‘y’ was here
+ uint32_t r_get_pixel(uint16_t x, uint16_t y) {
+                                           ^
+game.c:22:1: error: expected declaration or statement at end of input
+ }
+ ^
+main.c: In function ‘r_get_pixel’:
+main.c:34:1: error: expected declaration or statement at end of input
+ }
+ ^
+render.c: In function ‘r_get_pixel’:
+render.c:13:6: error: static declaration of ‘r_draw_pixel’ follows non-static declaration
+ void r_draw_pixel(uint16_t x, uint16_t y, uint32_t color) {
+      ^~~~~~~~~~~~
+In file included from render.c:4:0:
+include/render.h:10:6: note: previous declaration of ‘r_draw_pixel’ was here
+ void r_draw_pixel(uint16_t x, uint16_t y, uint32_t color);
+      ^~~~~~~~~~~~
+render.c:35:6: error: static declaration of ‘r_update’ follows non-static declaration
+ void r_update() {
+      ^~~~~~~~
+In file included from render.c:4:0:
+include/render.h:8:6: note: previous declaration of ‘r_update’ was here
+ void r_update();
+      ^~~~~~~~
+render.c:41:5: error: static declaration of ‘r_init’ follows non-static declaration
+ int r_init(SDL_Window * w, SDL_Surface * s) {
+     ^~~~~~
+In file included from render.c:4:0:
+include/render.h:9:5: note: previous declaration of ‘r_init’ was here
+ int r_init(SDL_Window * w, SDL_Surface * s);
+     ^~~~~~
+render.c:50:1: error: expected declaration or statement at end of input
+ }
+ ^
