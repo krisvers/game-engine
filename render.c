@@ -21,10 +21,14 @@ void r_draw_pixel(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 uint32_t r_get_pixel(uint16_t x, uint16_t y) {
+	R_INIT_CHECK();
+
 	return ((uint32_t *) surface->pixels)[x + (y * surface->w)];
 }
 
 void r_clear_window(uint32_t color) {
+	R_INIT_CHECK_VOID();
+
 	for (uint16_t h = 0; h < surface->h; h++) {
 		for (uint16_t w = 0; w < surface->w; w++) {
 			r_draw_pixel(w, h, color);

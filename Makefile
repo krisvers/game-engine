@@ -1,5 +1,5 @@
 CC := gcc
-CCFLAGS := -std=c99 -lSDL2 -Iinclude -O2
+CCFLAGS := -std=c99 -lSDL2 -Iinclude -O2 -Wall -Werror -Wextra -Wpedantic
 
 all:
 	$(CC) $(shell find . -type f -name "*.c") -o bin/game $(CCFLAGS)
