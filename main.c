@@ -20,7 +20,7 @@ int main() {
 	surface = SDL_GetWindowSurface(window);
 	SDL_NULL_CHECK(surface);
 
-	if (r_init(window, surface) != 0) {
+	if (r_init(window, surface, TARGET_WIDTH, TARGET_HEIGHT) != 0) {
 		return 1;
 	}
 

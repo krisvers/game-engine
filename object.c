@@ -3,5 +3,6 @@
 #include <stdio.h>
 
 void object_generic_func(void * obj) {
-	printf("object is of type: %d, draw func: %p, logic func: %p\n", ((struct GenericObject *) obj)->type, (void *) ((struct GenericObject *) obj)->draw, (void *) ((struct GenericObject *) obj)->logic);
+	// cursed function pointer conversion to print the address (ISO C forbids casting object pointer to void pointer)
+	printf("object is of type: %d, draw func: %lx, logic func: %lx\n", ((struct GenericObject *) obj)->type, (size_t) ((struct GenericObject *) obj)->draw, (size_t) ((struct GenericObject *) obj)->logic);
 }

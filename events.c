@@ -12,15 +12,16 @@ short int e_events() {
 	switch (event.type) {
 		case SDL_QUIT:
 			return EVENT_QUIT;
-		case SDL_KEYBOARD:
+		case SDL_KEYUP:
 			// process input
-			k_register_up(event.key.keysym.sym);
+			k_register_up(event.key.keysym.scancode);
 			return EVENT_KEYUP;
 		case SDL_KEYDOWN:
 			// process input
-			k_register_up(event.key.keysym.sym);
+			k_register_up(event.key.keysym.scancode);
 			return EVENT_KEYDOWN;
 		default:
+			break;
 	}
 
 	return EVENT_NONE;
