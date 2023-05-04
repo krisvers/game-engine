@@ -2,17 +2,14 @@
 #include <common.h>
 #include <render.h>
 #include <object.h>
+#include <events.h>
 
 void g_update() {
-	
+
 }
 
 int g_main() {
-	SDL_Event event;
-	SDL_PollEvent(&event);
-
-	while (event.type != SDL_QUIT) {
-		SDL_PollEvent(&event);
+	while (e_events() != -1) {
 		g_update();
 		r_update();
 	}
